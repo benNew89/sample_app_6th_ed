@@ -3,7 +3,9 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.0.5'
 
-gem 'rails',                      '6.1.4.6'
+gem 'rails',                      '~> 7.0'
+gem 'pg',                         '~> 1.4'
+gem 'dotenv',                     '~> 2.8'
 gem 'image_processing',           '1.9.3'
 gem 'mini_magick',                '4.9.5'
 gem 'active_storage_validations', '0.8.9'
@@ -18,10 +20,16 @@ gem 'webpacker',                  '5.4.0'
 gem 'turbolinks',                 '5.2.1'
 gem 'jbuilder',                   '2.10.0'
 gem 'bootsnap',                   '1.7.2', require: false
+gem 'rake',                       '~> 13.0'
+gem 'rspec-rails',                '~> 6.0'
+gem 'bundler',                    '~> 2.3'
+gem 'mailerlite',                 '~> 1.0'
 
 group :development, :test do
   gem 'sqlite3', '1.4.2'
   gem 'byebug',  '11.1.3', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'rubocop', '~> 1.59'
+  gem 'factory_bot_rails', '~> 6.2'
 end
 
 group :development do
@@ -40,6 +48,7 @@ group :test do
   gem 'minitest-reporters',       '1.3.8'
   gem 'guard',                    '2.16.2'
   gem 'guard-minitest',           '2.4.6'
+  gem 'database_cleaner-active_record', '~> 2.0'
 end
 
 group :production do
